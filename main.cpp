@@ -1,14 +1,13 @@
-
-#include "InputLayer.h"
+#include "OutputLayer.h"
 
 int main()
 {
-    InputLayer inputLayer;
+    OutputLayer outputLayer;
 
-    inputLayer.numberOfNeuronsInLayer = 5;
+    outputLayer.numberOfNeuronsInLayer = 3;
 
-    inputLayer.initLayer();
-    inputLayer.printLayer();
+    outputLayer.initLayer();
+    outputLayer.printLayer();
 
     return 0;
 }

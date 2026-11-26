@@ -5,17 +5,16 @@
 class Neuron
 {
 public:
-    Neuron() = default;
-    ~Neuron() = default;
-
+    // Random starting weight in [-1, 1]; positive and negative values let neurons learn different things.
     double initNeuron()
     {
-        return static_cast<double>(std::rand()) / RAND_MAX;
+        return 2.0 * static_cast<double>(std::rand()) / RAND_MAX - 1.0;
     }
 
+    // One weight per neuron of the previous layer (empty for input and bias neurons).
     std::vector<double> listOfWeightsIn;
-    std::vector<double> listOfWeightsOut;
+    // The neurons result after the activation function.
     double outputValue = 0.0;
+    // The error signal (delta) will be used by backpropagation.
     double error = 0.0;
-    double sensibility = 0.0;
 };
